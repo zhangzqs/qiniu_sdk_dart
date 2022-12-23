@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 
-class Auth {
+class BasicAuth {
   final String accessKey;
   final String secretKey;
 
-  const Auth({
+  const BasicAuth({
     required this.accessKey,
     required this.secretKey,
   });
@@ -26,7 +26,10 @@ class Auth {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Auth && runtimeType == other.runtimeType && accessKey == other.accessKey && secretKey == other.secretKey;
+      other is BasicAuth &&
+          runtimeType == other.runtimeType &&
+          accessKey == other.accessKey &&
+          secretKey == other.secretKey;
 
   @override
   int get hashCode => accessKey.hashCode ^ secretKey.hashCode;

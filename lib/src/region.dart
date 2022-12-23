@@ -1,3 +1,9 @@
+extension AddHttpScheme on String {
+  String addHttpPrefix(bool useHttps) {
+    return (useHttps ? 'https://' : 'http://') + this;
+  }
+}
+
 class RegionHost {
   /// 空间管理
   final String uc;
