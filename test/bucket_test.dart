@@ -10,12 +10,12 @@ void main() {
     print(list);
   });
   test('create new bucket', () async {
-    await Bucket(context, 'zzq-test123-test').make();
+    await Bucket(context, 'zzq-test123-test').create();
   });
   test('delete bucket', () async {
     await Bucket(context, 'zzq-test123-test').drop();
   });
   test('bucket list', () async {
-    print(await Bucket(context, 'zzq-test123-test').list());
+    print(await Bucket(context, 'zzq-test123').list());
   });
 }
